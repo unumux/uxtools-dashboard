@@ -1,6 +1,52 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+/***************************
+	COLOR VARIABLES
+***************************/
+/***************************
+	FONT VARIABLES
+***************************/
+/*================================
+	SCAFFOLDING
+================================*/
+/*================================
+	TYPOGRPAHY
+================================*/
+/*================================
+	COMPONENTS
+================================*/
+/*================================
+	fORM STATES & ALERTS
+================================*/
+* {
+  box-sizing: border-box; }
 
-a {
-  color: #00B7FF; }
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  background: #265b80;
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.packages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-content: flex-start;
+  padding: 10px; }
+
+.package {
+  flex-grow: 1;
+  flex-basis: 23%;
+  min-height: 23vw;
+  background: #1f3340;
+  margin: 10px;
+  padding: 10px;
+  color: rgba(255, 255, 255, 0.9); }
+
+h1, h2 {
+  font-weight: 400; }
+
+h1 {
+  margin: 0; }

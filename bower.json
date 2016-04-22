@@ -5,5 +5,8 @@
     "**/.*",
     "node_modules",
     "components"
-  ]
+  ],
+  "dependencies": {
+    "colonial-branding": "unumux/colonial-branding#^3.1.0"
+  }
 }
