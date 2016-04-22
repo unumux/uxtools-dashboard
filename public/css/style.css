@@ -34,18 +34,27 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   align-content: flex-start;
-  padding: 10px; }
+  padding: 10px;
+  margin: 0 auto; }
 
 .package {
   flex-grow: 0;
-  flex-basis: calc(((100vw - 20px) / 3) - 20px);
-  min-height: 30vw;
+  flex-basis: calc(((100vw - 20px) / 1) - 20px);
+  min-height: calc(((100vw - 20px) / 1) - 20px);
   margin: 10px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 3px;
   overflow: hidden;
   display: flex;
   flex-direction: column; }
+  @media (min-width: 600px) {
+    .package {
+      flex-basis: calc(((100vw - 20px) / 2) - 20px);
+      min-height: calc(((100vw - 20px) / 2) - 20px); } }
+  @media (min-width: 900px) {
+    .package {
+      flex-basis: calc(((100vw - 20px) / 3) - 20px);
+      min-height: calc(((100vw - 20px) / 3) - 20px); } }
   .package__header {
     background: #1f3340;
     color: rgba(255, 255, 255, 0.9);

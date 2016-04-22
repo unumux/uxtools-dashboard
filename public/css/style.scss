@@ -22,20 +22,33 @@ body {
   justify-content: flex-start;
   align-content: flex-start;
   padding: 10px;
+  margin: 0 auto;
 }
 
 .package {
   $margin: 10px;
-  $box-size: calc(((100vw - 20px) / 3) - #{$margin * 2});
   flex-grow: 0;
+  $box-size: calc(((100vw - 20px) / 1) - #{$margin * 2});  
   flex-basis: $box-size;
-  min-height: 30vw;
+  min-height: $box-size;
   margin: $margin;
   background: rgba(#fff, 0.95);
   border-radius: 3px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  
+  @media(min-width: 600px) {
+    $box-size: calc(((100vw - 20px) / 2) - #{$margin * 2});  
+    flex-basis: $box-size;
+    min-height: $box-size;
+  }
+  
+  @media(min-width: 900px) {
+    $box-size: calc(((100vw - 20px) / 3) - #{$margin * 2});  
+    flex-basis: $box-size;
+    min-height: $box-size;
+  }
   
   &__header {
     background: $charcoal;   
