@@ -37,17 +37,57 @@ body {
   padding: 10px; }
 
 .package {
-  flex-grow: 1;
-  flex-basis: 30%;
+  flex-grow: 0;
+  flex-basis: calc(((100vw - 20px) / 3) - 20px);
   min-height: 30vw;
-  background: #1f3340;
   margin: 10px;
-  padding: 10px;
-  color: rgba(255, 255, 255, 0.9); }
-
-h1, h2 {
-  font-weight: 400; }
-
-h1 {
-  margin: 0;
-  font-size: 28px; }
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; }
+  .package__header {
+    background: #1f3340;
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex: 0 0 auto; }
+  .package__name, .package__version {
+    margin: 0;
+    font-weight: 400;
+    font-size: 26px;
+    padding: 10px; }
+  .package__version {
+    margin-left: auto;
+    background: #274151; }
+  .package__main {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 1.6;
+    flex: 1 1 0; }
+  .package__links {
+    background: #D4DADE;
+    padding: 10px;
+    display: flex;
+    align-content: flex-end;
+    justify-content: flex-end; }
+  .package__github, .package__npm {
+    font-size: 0;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: no-repeat 50% 50%;
+    background-size: 100% auto;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: 0.3s all; }
+    .package__github:hover, .package__npm:hover {
+      opacity: 1;
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); }
+  .package__github {
+    opacity: 0.7;
+    background-image: url("../img/github.svg");
+    margin-right: 10px; }
+  .package__npm {
+    opacity: 0.9;
+    background-image: url("../img/n-large.png"); }

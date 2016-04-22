@@ -21,10 +21,7 @@ router.get('/', function(req, res) {
   });
   
   Promise.all(promises).then(function(packages) {
-    packages = packages.map(function(package) {
-      package.name = package.name.replace("@unumux/", "");
-      return package;
-    });
+    console.log(packages);
     res.render('index', { packages: packages });    
   });
 });

@@ -4,8 +4,17 @@
 <div class="packages">
   {% for package in packages %}
   <div class="package">
-      <h1>{{ package.name }}</h1>
-      <h2>{{ package.version }} </h2>
+      <header class="package__header">
+        <h1 class="package__name">{{ package.name | replace("^@unumux/", "")}}</h1>
+        <h2 class="package__version">{{ package.version }} </h2>
+      </header>
+      <div class="package__main">
+        {{ package.description }}
+      </div>
+      <footer class="package__links">
+        <a href="https://github.com/{{ package.name | replace('^@', '')}}" target="_blank" class="package__github">Github</a>
+        <a href="https://www.npmjs.com/package/{{ package.name }}" target="_blank" class="package__npm">NPM</a>
+      </footer>
   </div>
   {% endfor %}
 </div>
