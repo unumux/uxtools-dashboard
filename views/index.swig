@@ -1,6 +1,11 @@
 {% extends 'layout.swig' %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <p>Welcome to {{ title }}</p>
+  {% for package in packages %}
+  <div class="package">
+      <h1>{{ package.name }}</h1>
+      <h2>{{ package.version }} </h2>
+  </div>
+  {% endfor %}
+
 {% endblock %}
