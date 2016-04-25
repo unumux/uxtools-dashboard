@@ -11,5 +11,6 @@
 </head>
 <body>
   {% block content %}{% endblock %}
+  <script src="/js/site.js"></script>
 </body>
 </html>

@@ -82,6 +82,19 @@ body {
     font-size: 20px;
     line-height: 1.6;
     flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__stats {
+    border-top: 1px solid rgba(0,0,0,0.1);
+    list-style-type: none;
+    padding: 0;
+    margin: 0; 
+    margin-top: auto;
+    padding-top: 15px;
+    font-size: 16px;
+    color: rgba(0,0,0,0.75);   
   }
   
   &__links {
@@ -111,8 +124,31 @@ body {
   }
   
   &__last-published {
-    margin-right: auto;
-    color: rgba(0,0,0,0.75);
+    margin-top: auto;
+  }
+  
+  &__install-cmd {
+    flex: 1 1 0;
+    display: flex;
+    margin-right: 10px;
+    
+    input {
+      font-size: 18px;
+      padding: 0.4em;
+      flex: 1 1 0;
+      background: rgba(#000, 0.15);
+      color: rgba(#000, 0.8);
+      border: none;  
+    }
+  }
+  
+  &__copy-cmd {
+    font-size: 0;
+    background: $pumpkin url("../img/clipboard.svg") 50% 50% no-repeat;
+    background-size: 65% auto;
+    border: none;
+    width: 32px;
+    
   }
   
   &__github {

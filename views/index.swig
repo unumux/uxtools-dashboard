@@ -9,10 +9,18 @@
         <h2 class="package__version">{{ package["dist-tags"].latest }} </h2>
       </header>
       <div class="package__main">
-        {{ package.description }}
+        <div class="package__description">
+          {{ package.description }}
+        </div>
+        <ul class="package__stats">
+          <li>Last published: {{ package.time.modified | timeago }}</li>        
+          <li>Number of versions: {{ Object.keys(package.versions).length }}</li>
+        </ul>
       </div>
       <footer class="package__links">
-        <span class="package__last-published">Published {{ package.time.modified | timeago }}</span>
+        <div class="package__install-cmd">
+          <input type="text" readonly value="{{ package.cmd }}" onclick="select()">
+        </div>
         <a href="https://github.com/{{ package.name | replace('^@', '')}}" target="_blank" class="package__github">Github</a>
         <a href="https://www.npmjs.com/package/{{ package.name }}" target="_blank" class="package__npm">NPM</a>
       </footer>
