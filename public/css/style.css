@@ -89,6 +89,10 @@ body {
     padding-top: 15px;
     font-size: 16px;
     color: rgba(0, 0, 0, 0.75); }
+  .package__issues-link {
+    text-decoration: none;
+    color: #e0832e;
+    font-weight: 600; }
   .package__links {
     background: #D4DADE;
     padding: 10px;

@@ -15,6 +15,7 @@
         <ul class="package__stats">
           <li>Last published: {{ package.time.modified | timeago }}</li>        
           <li>Number of versions: {{ Object.keys(package.versions).length }}</li>
+          <li>Open issues: <a class="package__issues-link" href="{{ package.ghRepo.html_url }}/issues" target="_blank">{{ package.ghRepo.open_issues }}</a></li>
         </ul>
       </div>
       <footer class="package__links">

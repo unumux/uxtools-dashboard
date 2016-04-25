@@ -97,6 +97,12 @@ body {
     color: rgba(0,0,0,0.75);   
   }
   
+  &__issues-link {
+    text-decoration: none;
+    color: $pumpkin;
+    font-weight: 600;
+  }
+  
   &__links {
     background: $silver;
     padding: 10px;
