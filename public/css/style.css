@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+@import url(https://fonts.googleapis.com/css?family=Source+Code+Pro);
 /***************************
 	COLOR VARIABLES
 ***************************/
@@ -119,7 +120,8 @@ body {
     display: flex;
     margin-right: 10px; }
     .package__install-cmd input {
-      font-size: 18px;
+      font-family: "Source Code Pro";
+      font-size: 16px;
       padding: 0.4em;
       flex: 1 1 0;
       background: rgba(0, 0, 0, 0.15);
