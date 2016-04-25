@@ -7,6 +7,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var swig = require('swig');
+var moment = require("moment");
 
 var routes = require('./routes/index');
 var users = require('./routes/user');
@@ -23,6 +24,10 @@ app.set('view cache', false);
 swig.setDefaults({ cache: false });
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'swig');
+
+swig.setFilter('timeago', function (input, idx) {
+  return moment(input).fromNow();
+});
 
 // app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));

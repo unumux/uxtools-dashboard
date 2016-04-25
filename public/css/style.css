@@ -35,26 +35,31 @@ body {
   justify-content: flex-start;
   align-content: flex-start;
   padding: 10px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  max-width: 1300px; }
 
 .package {
   flex-grow: 0;
-  flex-basis: calc(((100vw - 20px) / 1) - 20px);
-  min-height: calc(((100vw - 20px) / 1) - 20px);
-  margin: 10px;
+  flex-basis: calc(((100vw - 20px) / 1) - 10px);
+  min-height: calc(((100vw - 20px) / 1) - 10px);
+  margin: 5px;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 3px;
   overflow: hidden;
   display: flex;
   flex-direction: column; }
-  @media (min-width: 600px) {
+  @media (min-width: 700px) {
     .package {
       flex-basis: calc(((100vw - 20px) / 2) - 20px);
       min-height: calc(((100vw - 20px) / 2) - 20px); } }
-  @media (min-width: 900px) {
+  @media (min-width: 1100px) {
     .package {
       flex-basis: calc(((100vw - 20px) / 3) - 20px);
       min-height: calc(((100vw - 20px) / 3) - 20px); } }
+  @media (min-width: 1300px) {
+    .package {
+      flex-basis: calc(((1300px - 20px) / 3) - 20px);
+      min-height: calc(((1300px - 20px) / 3) - 20px); } }
   .package__header {
     background: #1f3340;
     color: rgba(255, 255, 255, 0.9);
@@ -77,8 +82,7 @@ body {
     background: #D4DADE;
     padding: 10px;
     display: flex;
-    align-content: flex-end;
-    justify-content: flex-end; }
+    align-items: center; }
   .package__github, .package__npm {
     font-size: 0;
     display: block;
@@ -93,6 +97,9 @@ body {
       opacity: 1;
       -webkit-filter: grayscale(0%);
       filter: grayscale(0%); }
+  .package__last-published {
+    margin-right: auto;
+    color: rgba(0, 0, 0, 0.75); }
   .package__github {
     opacity: 0.7;
     background-image: url("../img/github.svg");

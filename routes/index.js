@@ -15,13 +15,14 @@ var packagesToCheck = [
 ];
 
 
+
 router.get('/', function(req, res) {
   var promises = packagesToCheck.map(function(package) {
-    return packageJson(package, "latest");
+    return packageJson(package);
   });
   
   Promise.all(promises).then(function(packages) {
-    console.log(packages);
+    
     res.render('index', { packages: packages });    
   });
 });

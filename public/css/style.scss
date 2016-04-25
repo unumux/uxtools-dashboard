@@ -23,10 +23,11 @@ body {
   align-content: flex-start;
   padding: 10px;
   margin: 0 auto;
+  max-width: 1300px;
 }
 
 .package {
-  $margin: 10px;
+  $margin: 5px;
   flex-grow: 0;
   $box-size: calc(((100vw - 20px) / 1) - #{$margin * 2});  
   flex-basis: $box-size;
@@ -38,14 +39,21 @@ body {
   display: flex;
   flex-direction: column;
   
-  @media(min-width: 600px) {
+  @media(min-width: 700px) {
+    $margin: 10px;
     $box-size: calc(((100vw - 20px) / 2) - #{$margin * 2});  
     flex-basis: $box-size;
     min-height: $box-size;
   }
   
-  @media(min-width: 900px) {
+  @media(min-width: 1100px) {
     $box-size: calc(((100vw - 20px) / 3) - #{$margin * 2});  
+    flex-basis: $box-size;
+    min-height: $box-size;
+  }
+  
+  @media(min-width: 1300px) {
+    $box-size: calc(((1300px - 20px) / 3) - #{$margin * 2});  
     flex-basis: $box-size;
     min-height: $box-size;
   }
@@ -80,8 +88,7 @@ body {
     background: $silver;
     padding: 10px;
     display: flex;
-    align-content: flex-end;
-    justify-content: flex-end;
+    align-items: center;
   }
   
   &__github, &__npm {
@@ -101,6 +108,11 @@ body {
       filter: grayscale(0%);
     }
     
+  }
+  
+  &__last-published {
+    margin-right: auto;
+    color: rgba(0,0,0,0.75);
   }
   
   &__github {
