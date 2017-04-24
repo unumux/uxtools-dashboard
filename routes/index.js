@@ -38,6 +38,22 @@ var packagesToCheck = [{
   name: "@unumux/update-hosts-ip",
   cmd: "npm i -g @unumux/update-hosts-ip",
   ghName: "unumux/update-hosts-ip"
+}, {
+  name: "@unumux/willow",
+  cmd: "npm i --save-dev @unumux/willow",
+  ghName: "unumux/willow"
+}, {
+  name: "@unumux/theme-enterprise-default",
+  cmd: "npm i --save-dev @unumux/theme-enterprise-default",
+  ghName: "unumux/theme-enterprise-default"
+}, {
+  name: "@unumux/theme-unum-default",
+  cmd: "npm i --save-dev @unumux/theme-unum-default",
+  ghName: "unumux/theme-unum-default"
+}, {
+  name: "@unumux/theme-coloniallife-default",
+  cmd: "npm i --save-dev @unumux/theme-coloniallife-default",
+  ghName: "unumux/theme-coloniallife-default"
 }];
 
 var cache = {
@@ -59,16 +75,16 @@ router.get('/', function(req, res) {
 
 function updateCache() {
   return new Promise(function(resolve, reject) {
-    var githubPromise = rp({ 
-      uri: "https://api.github.com/users/unumux/repos", 
+    var githubPromise = rp({
+      uri: "https://api.github.com/orgs/unumux/repos?per_page=100",
       headers: { "User-Agent": "UnumUX" },
       json: true
     });
-  
+
     var promises = packagesToCheck.map(function(package) {
       return packageJson(package.name);
     });
-    
+
     promises.push(githubPromise);
 
     Promise.all(promises).then(function(packages) {
@@ -77,8 +93,8 @@ function updateCache() {
         var ghName = packagesToCheck[index].ghName;
         package.ghRepo = _.find(ghData, { full_name: ghName });
         package.cmd = packagesToCheck[index].cmd;
-        
-        return package;  
+
+        return package;
       });
       cache.packages = packages;
       cache.updated = new Date();
